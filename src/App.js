@@ -3,8 +3,8 @@ import './App.css';
 import React, { useState } from 'react'
 
 function App() {
-  const [beanResponse, setBeanResponse] = useState({})
-
+const [beanResponse, setBeanResponse] = useState({})
+  
   // fetch from back end
   async function fetchBeans(){
     let beanResponse = await fetch(

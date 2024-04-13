@@ -19,6 +19,7 @@ const cors = require('cors')
 
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
+const produceRouter = require('./controller/produce_controller');
 
 
 // When you make a GET request to the address ending with "/" ... Serve the built app from "/build/index.html"
@@ -26,14 +27,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.get('/beans', function(req, res){
-    res.json(
-        {
-            food:"beans",
-            goodness:"alot"
-        }
-    )
-})
+app.use('/produce', produceRouter);
 
 
 app.listen(5000);
