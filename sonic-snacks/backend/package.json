@@ -1,6 +1,7 @@
 {
-  "name": "Sonic Snacks",
+  "name": "sonic-snacks",
   "version": "1.0.0",
+  "proxy": "http://localhost:5000",
   "homepage": ".",
   "description": "Sonic Snacks APP",
   "main": "server.js",

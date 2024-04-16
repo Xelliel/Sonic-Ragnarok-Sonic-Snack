@@ -8,6 +8,7 @@ import newItem from "./item.js";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <App />
   </React.StrictMode>
 );
 
@@ -60,8 +61,8 @@ const food =[
 
   document.addEventListener("DOMContentLoaded", addItemToCart);
 
-const increamentButton = document.querySelectorAll("#increase");
-incrementButtons.forEach(increaseItems);
+const incrementButton = document.querySelectorAll("#increase");
+incrementButton.forEach(increaseItems);
 
 function increaseItems(button){
   button.addEventListener("click", function (e){
@@ -69,7 +70,7 @@ function increaseItems(button){
    })
   }
 
-const decrementButtons = document.querySelectorAll("decrease");
+const decrementButtons = document.querySelectorAll("#decrease");
 decrementButtons.forEach(decreaseItems)
 
 function decreaseItems(button) {
@@ -112,9 +113,9 @@ function updateTotals(elementId, value) {
 }
 
 
-const [totalPrice,shippingFee,checkoutPrice] = calculateTotals();
+const [totalPrice,shippingFee,checkoutPrice] = calculateTotal();
 
-updateTotals("add-items-cost",`$${totalPrice}`);
+updateTotals("#add-items-cost",`$${totalPrice}`);
 updateTotals("#shipping-fee",`$${shippingFee}`);
-updateTotals("total-amount-to-pay",`$${checkoutPrice}`);
-updateTotals("checkout-btn",`Checkout $${checkoutPrice}`);
+updateTotals("#total-amount-to-pay",`$${checkoutPrice}`);
+updateTotals("#checkout-btn",`Checkout $${checkoutPrice}`);
