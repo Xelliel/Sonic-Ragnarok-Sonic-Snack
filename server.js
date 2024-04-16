@@ -30,4 +30,9 @@ app.get('/', function (req, res) {
 app.use('/produce', produceRouter);
 
 
-app.listen(5000);
+app.get('/', (req, res) => {
+  res.sendFile('/views/homepage.jsx');
+})
+
+
+app.listen(3002);

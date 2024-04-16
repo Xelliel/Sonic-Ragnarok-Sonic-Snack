@@ -8,7 +8,6 @@ import newItem from "./item.js";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
   </React.StrictMode>
 );
 
@@ -50,7 +49,7 @@ const food =[
     
   }
 
- // document.addEventListener("DOMContentLoaded",addItemToCart);
+
 
   function addItemToCart() {
     const addSelectFood = document.getElementById("add-items");
@@ -58,6 +57,8 @@ const food =[
       addSelectFood.appendChild(foodItem(food));
     })
   }
+
+  document.addEventListener("DOMContentLoaded", addItemToCart);
 
 const increamentButton = document.querySelectorAll("#increase");
 incrementButtons.forEach(increaseItems);
@@ -87,8 +88,33 @@ function totalItemPrice(element,siblingPosition){
   element.parentElement.previousElementSibling.textContent = `$${totalItemPrice}`;
 }
 
-const previousSibling = e.target.previousElementSibling;
-totalItemPrice(e.target, previousSibling);
+//const previousSibling = e.target.previousElementSibling;
+//totalItemPrice(e.target, previousSibling);
 
-const nexxtSibling = e.target.nextElementSibling;
-totalItemPrice(e.target,pre)
+//const nexxtSibling = e.target.nextElementSibling;
+//totalItemPrice(e.target,previousSibling);
+
+function calculateTotal() {
+  let cartTotalPrice = 0;
+  const getItemPrices = document.querySelectorAll("#total-item-cost");
+  getItemPrices.forEach(itemPrice =>{
+    cartTotalPrice += Number(itemPrice.textContent.slice(1));
+  });
+  
+  const shippingFee = (cartTotalPrice*7/100);
+  const totalCashToPay = cartTotalPrice + shippingFee;
+  return [cartTotalPrice.toFixed(2), shippingFee.toFixed(2), totalCashToPay.toFixed(2)];
+}
+
+function updateTotals(elementId, value) {
+  const element = document.querySelector(elementId);
+  element.textContent = value;
+}
+
+
+const [totalPrice,shippingFee,checkoutPrice] = calculateTotals();
+
+updateTotals("add-items-cost",`$${totalPrice}`);
+updateTotals("#shipping-fee",`$${shippingFee}`);
+updateTotals("total-amount-to-pay",`$${checkoutPrice}`);
+updateTotals("checkout-btn",`Checkout $${checkoutPrice}`);

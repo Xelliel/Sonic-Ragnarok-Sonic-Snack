@@ -1,7 +1,7 @@
 const React = reuire('react')
 const Def = require('../default')
 
-function index (data) 
+function index (data) {
     let snacksFormatted = data.snacks.map((snack) => {
         return (
             <div>
@@ -11,12 +11,14 @@ function index (data)
     })
     return (
         <Def>
-            <mai
+            <main>
          <h1>Snacks Index<h1>
             {snacksFormatted}
+            </main>
         </Def>
+        
     )
-
+}
 
 
 
