@@ -4,7 +4,7 @@ const Default = (html) => {
    return (
     <html>
         <head>
-            <title>NavBAr</title>
+            <title>navBar</title>
         </head>
         <body>
             <nav>

@@ -50,7 +50,7 @@ const food =[
     
   }
 
-  document.addEventListener("DOMContentLoaded",addItemToCart);
+ // document.addEventListener("DOMContentLoaded",addItemToCart);
 
   function addItemToCart() {
     const addSelectFood = document.getElementById("add-items");
@@ -58,3 +58,37 @@ const food =[
       addSelectFood.appendChild(foodItem(food));
     })
   }
+
+const increamentButton = document.querySelectorAll("#increase");
+incrementButtons.forEach(increaseItems);
+
+function increaseItems(button){
+  button.addEventListener("click", function (e){
+  e.target.previousElementSibling.textContent++;
+   })
+  }
+
+const decrementButtons = document.querySelectorAll("decrease");
+decrementButtons.forEach(decreaseItems)
+
+function decreaseItems(button) {
+  button.addEventListener("click", function (e) {
+    let currentQuantity = e.target.nextElementSibling.textContent;
+    if(currentQuantity >1){
+      e.target.nextElementSibling.textContent--;
+    }
+  });
+}
+
+function totalItemPrice(element,siblingPosition){
+  let itemPrice = element.parentElement.parentElement.previousElementSibling.childern[1].textContent.slice(1);
+  let itemQuantity = siblingPosition.textContent;
+  let totalItemPrice = itemPrice * itemQuantity;
+  element.parentElement.previousElementSibling.textContent = `$${totalItemPrice}`;
+}
+
+const previousSibling = e.target.previousElementSibling;
+totalItemPrice(e.target, previousSibling);
+
+const nexxtSibling = e.target.nextElementSibling;
+totalItemPrice(e.target,pre)

@@ -20,7 +20,7 @@ function App() {
   return (
     <div>
       {backendData === null ? (
-        <p>Loading...</p>
+        <p>Loading... snacks!</p>
       ) : (
         backendData.users.map((user, i) => (
           <p key={i}>{user}</p>
