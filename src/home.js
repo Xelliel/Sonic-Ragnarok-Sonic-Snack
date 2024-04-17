@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 const React = require('react')
-const Def = require ('./default')
+//const Def = require ('./default')
 
 function home () {
     return (
-        <Def>
+        
             <main>
                 <h1>Home</h1>
                 <div>
@@ -15,8 +15,8 @@ function home () {
                     <button className='btn-primary'>Snacks</button>
                     </Link>
             </main>
-        </Def>
+       
     )
 }
 
-module.exports = home;
+export default home;

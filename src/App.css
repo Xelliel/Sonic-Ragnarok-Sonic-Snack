@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.navbar {
+  width: 100%;
+  align-items: center;
+  justify-content:center;
+  background-color: blue;
+  color: white;
+}
