@@ -1,31 +1,36 @@
 import logo from './logo.svg';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 import React, { useState } from 'react'
 
 function App() {
-const [beanResponse, setBeanResponse] = useState({})
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className= "content">
+          <Switch>
+            <Route  extact path="/">
+              <Home/>
+            </Route>
+            <Route path ="/create">
+              <Create/>
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
+  )
+//const [beanResponse, setBeanResponse] = useState({})
   
   // fetch from back end
-  async function fetchHome(){
+ async function fetchHome(){
     let beanResponse = await fetch(
       "http://127.0.0.1:5000/home.jsx"
     )
     let homeData = await homeResponse.json()
 
-    //storing the response
-    setBeanResponse(homeData)
-    console.log(Data)
-  }
-//  let favoriteFruitVeggieObject = { // curly bracket open
-//   fruit: banana, // key then colon then value
-//   vegetable: carrot // seperated by commas
-//  } // closing curly bracket
-
- // banana == favoriteFruitVeggieObject.fruit
- // carrot == favoriteFruitVeggieObject.vegetable
-
- // favoriteFruitVeggieObject[fruit]
-// beanResponse.goodness == 
+   
   
 
   return (
@@ -45,7 +50,10 @@ const [beanResponse, setBeanResponse] = useState({})
         </a>
       </header>
     </div>
-  );
-}
+  )
+ }
+};
+
+
 
 export default App;

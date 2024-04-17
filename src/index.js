@@ -39,7 +39,7 @@ const food =[
     image:"",
   }];
 
-  function foodItem(food) {
+  function foodItem({food}) {
     return (
       <div key={food.name}>
         <img src={food.image} alt={food.name} />
@@ -50,13 +50,20 @@ const food =[
     
   }
 
+  
+   
 
+  //function createFoodItemElement(food) { 
+  //const foodItemDiv = document.createElement("div")
+  //foodItemDiv.classList.add("food-item");
+  //}
 
   function addItemToCart() {
     const addSelectFood = document.getElementById("add-items");
-    food.forEach(food=>{
+    foodItem.forEach(food =>{
+      //const foodItemElement = createFoodItemElement(food);
       addSelectFood.appendChild(foodItem(food));
-    })
+    });
   }
 
   document.addEventListener("DOMContentLoaded", addItemToCart);
