@@ -4,7 +4,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import React from 'react';
 
 
-function cards() {
+function Cards() {
   return (
     <CardGroup>
       <Card>
@@ -47,4 +47,4 @@ function cards() {
   );
 }
 
-export default cards;
+export default Cards;
