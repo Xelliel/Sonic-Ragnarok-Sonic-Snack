@@ -20,6 +20,9 @@ function App() {
             <Route path ="/create">
               <Create/>
             </Route>
+            <Route path="/cards">
+              <cards/>
+            </Route>
             <div className="shoppingCart"></div>
           </Switch>
         </div>

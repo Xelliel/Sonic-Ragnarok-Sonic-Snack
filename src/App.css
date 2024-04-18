@@ -38,16 +38,24 @@
 }
 .navbar {
   background-color: rgb(20, 20, 130);
-  margin: 0%;
   overflow: hidden;
   color: white;
 }
 
 .navbar a {
+
   float: left;
   display: block;
   font-size: 25px;
   color: white;
   text-align: right;
-  padding: 14px 30px
+  padding: 14px 30px;
+  text-decoration: none;
+}
+.navbar a:hover {
+ color: #282c34;
+}
+
+.navbar ul {
+  list-style-type: none;
 }
