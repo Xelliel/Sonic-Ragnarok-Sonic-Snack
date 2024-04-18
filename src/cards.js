@@ -1,0 +1,49 @@
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import { Link } from 'react-router-dom';
+
+
+function cards() {
+  return (
+    <CardGroup>
+      <Card>
+        <Card.Img variant="top" src="https://images.pexels.com/photos/33129/popcorn-movie-party-entertainment.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+        <Card.Body>
+          <Card.Title>Pop Corn</Card.Title>
+          <Card.Text>
+           Get your Fresh pop corn at this location.
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+      <Card>
+        <Card.Img variant="top" src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+        <Card.Body>
+          <Card.Title>Pizza</Card.Title>
+          <Card.Text>
+           Yummy pizza.{' '}
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+      <Card>
+        <Card.Img variant="top" src="https://images.pexels.com/photos/9304021/pexels-photo-9304021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+        <Card.Body>
+          <Card.Title>Hot Dogs</Card.Title>
+          <Card.Text>
+           Hot dogs,chilli dogs so good.
+          </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+    </CardGroup>
+  );
+}
+
+export default cards;

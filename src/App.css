@@ -37,9 +37,17 @@
   }
 }
 .navbar {
-  width: 100%;
-  align-items: center;
-  justify-content:center;
-  background-color: blue;
+  background-color: rgb(20, 20, 130);
+  margin: 0%;
+  overflow: hidden;
   color: white;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  font-size: 25px;
+  color: white;
+  text-align: right;
+  padding: 14px 30px
 }

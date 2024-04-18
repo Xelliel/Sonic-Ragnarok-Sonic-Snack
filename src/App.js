@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import home from './home';
 import Create from './Create';
+import cards from './cards';
 
 function App() {
   return (
@@ -23,12 +24,14 @@ function App() {
           </Switch>
         </div>
       </div>
-    </Router>
-  )
+      </Router>
+    )
+  }
+  
 //const [beanResponse, setBeanResponse] = useState({})
   
   // fetch from back end
-} 
+
 
 
 

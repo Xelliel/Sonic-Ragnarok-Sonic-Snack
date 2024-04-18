@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-const React = require('react')
-import Navbar from './Navbar';
 
-function home () {
+function menu () {
     return (
         
             <main>
@@ -11,12 +9,12 @@ function home () {
                     <img src='https://images.pexels.com/photos/9738991/pexels-photo-9738991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                     alt='onion rings on pexels'/> 
                 </div>
-                <Link to='/snacks'>
+                <Link to='/menu'>
                     <button className='btn-primary'>Snacks</button>
                     </Link>
             </main>
        
     )
-};
+}
 
-export default home;
+export default menu;
