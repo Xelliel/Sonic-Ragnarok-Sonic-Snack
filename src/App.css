@@ -35,6 +35,9 @@
   to {
     transform: rotate(360deg);
   }
+  h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
 }
 .navbar {
   width: 2000px;

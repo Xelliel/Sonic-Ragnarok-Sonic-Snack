@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import newItem from "./item.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,128 +16,118 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-const food =[
+const food = [
   {
-    name:"Cheetos",
-    price:"5.99",
-    image:"",
+    name: "Cheetos",
+    price: "5.99",
+    image: "",
   },
   {
-    name:"Sour Patch Kids",
-    price:"5.99",
-    image:"",
+    name: "Sour Patch Kids",
+    price: "5.99",
+    image: "",
   },
   {
-    name:"Onion Rings",
-    price:"",
-    image:"",
+    name: "Onion Rings",
+    price: "",
+    image: "",
   },
   {
-    name:"",
-    price:"",
-    image:"",
-  }];
+    name: "",
+    price: "",
+    image: "",
+  }
+];
 
-  function foodItem({food}) {
-    return (
-      <div key={food.name}>
-        <img src={food.image} alt={food.name} />
+function FoodItem({ food }) {
+  return (
+    <div key={food.name}>
+      <img src={food.image} alt={food.name} />
       <h2>{food.name}</h2>
       <p>{food.price}</p>
     </div>
   );
-    
-  }
+}
 
-  
-   
+function addItemToCart() {
+  const addSelectFood = document.getElementById("add-items");
 
-  //function createFoodItemElement(food) { 
-  //const foodItemDiv = document.createElement("div")
-  //foodItemDiv.classList.add("food-item");
-  //}
-
-  function addItemToCart() {
-    const addSelectFood = document.getElementById("add-items");
+  // Check if the element exists
+  if (addSelectFood) {
     food.forEach(item => {
       addSelectFood.appendChild(createFoodItem(item));
     });
+  } else {
+    console.error("Element with ID 'add-items' not found.");
   }
-  
-  function createFoodItem(foodItem) {
-    // Create and configure the DOM element for the food item
-    // and return it
-    const foodElement = document.createElement("div");
-    foodElement.textContent = foodItem;
-    return foodElement;
-  }
+}
 
- // function addItemToCart() {
-   // const addSelectFood = document.getElementById("add-items");
-    //food.forEach(foodItem => {
-     // addSelectFood.appendChild(foodItem(foodItem));
-    //});
-  //}
-  
+function createFoodItem(foodItem) {
+  // Create and configure the DOM element for the food item
+  // and return it
+  const foodElement = document.createElement("div");
+  foodElement.textContent = foodItem;
+  return foodElement;
+}
 
-  document.addEventListener("DOMContentLoaded", addItemToCart);
+document.addEventListener("DOMContentLoaded", function() {
+  addItemToCart();
+});
 
-const incrementButton = document.querySelectorAll("#increase");
-incrementButton.forEach(increaseItems);
+const incrementButtons = document.querySelectorAll("#increase");
+incrementButtons.forEach(increaseItems);
 
-function increaseItems(button){
-  button.addEventListener("click", function (e){
-  e.target.previousElementSibling.textContent++;
-   })
-  }
+function increaseItems(button) {
+  button.addEventListener("click", function (e) {
+    e.target.previousElementSibling.textContent++;
+  });
+}
 
 const decrementButtons = document.querySelectorAll("#decrease");
-decrementButtons.forEach(decreaseItems)
+decrementButtons.forEach(decreaseItems);
 
 function decreaseItems(button) {
   button.addEventListener("click", function (e) {
     let currentQuantity = e.target.nextElementSibling.textContent;
-    if(currentQuantity >1){
+    if (currentQuantity > 1) {
       e.target.nextElementSibling.textContent--;
     }
   });
 }
 
-function totalItemPrice(element,siblingPosition){
-  let itemPrice = element.parentElement.parentElement.previousElementSibling.childern[1].textContent.slice(1);
+function totalItemPrice(element, siblingPosition) {
+  let itemPrice = element.parentElement.parentElement.previousElementSibling.children[1].textContent.slice(1);
   let itemQuantity = siblingPosition.textContent;
   let totalItemPrice = itemPrice * itemQuantity;
   element.parentElement.previousElementSibling.textContent = `$${totalItemPrice}`;
 }
 
-//const previousSibling = e.target.previousElementSibling;
-//totalItemPrice(e.target, previousSibling);
-
-//const nexxtSibling = e.target.nextElementSibling;
-//totalItemPrice(e.target,previousSibling);
-
 function calculateTotal() {
   let cartTotalPrice = 0;
   const getItemPrices = document.querySelectorAll("#total-item-cost");
-  getItemPrices.forEach(itemPrice =>{
+  getItemPrices.forEach(itemPrice => {
     cartTotalPrice += Number(itemPrice.textContent.slice(1));
   });
-  
-  const shippingFee = (cartTotalPrice*7/100);
+
+  const shippingFee = (cartTotalPrice * 7 / 100);
   const totalCashToPay = cartTotalPrice + shippingFee;
   return [cartTotalPrice.toFixed(2), shippingFee.toFixed(2), totalCashToPay.toFixed(2)];
 }
 
 function updateTotals(elementId, value) {
   const element = document.querySelector(elementId);
-  element.textContent = value;
+  if (element) {
+    element.textContent = value;
+  } else {
+    console.error(`Element with ID '${elementId}' not found.`);
+  }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  const [totalPrice, shippingFee, checkoutPrice] = calculateTotal();
 
-const [totalPrice,shippingFee,checkoutPrice] = calculateTotal();
-
-updateTotals("#add-items-cost",`$${totalPrice}`);
-updateTotals("#shipping-fee",`$${shippingFee}`);
-updateTotals("#total-amount-to-pay",`$${checkoutPrice}`);
-updateTotals("#checkout-btn",`Checkout $${checkoutPrice}`);
-
+  updateTotals("#add-items-cost", `$${totalPrice}`);
+  updateTotals("#shipping-fee", `$${shippingFee}`);
+  updateTotals("#total-amount-to-pay", `$${checkoutPrice}`);
+  updateTotals("#checkout-btn", `Checkout $${checkoutPrice}`);
+});
