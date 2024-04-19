@@ -19,17 +19,17 @@ reportWebVitals();
 
 const food =[
   {
-    name:"",
-    price:"",
+    name:"Cheetos",
+    price:"5.99",
     image:"",
   },
   {
-    name:"",
-    price:"",
+    name:"Sour Patch Kids",
+    price:"5.99",
     image:"",
   },
   {
-    name:"",
+    name:"Onion Rings",
     price:"",
     image:"",
   },
