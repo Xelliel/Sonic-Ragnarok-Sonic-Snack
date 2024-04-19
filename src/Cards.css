@@ -1,0 +1,15 @@
+.CardGroup {
+display: flex;
+width: 100%;
+margin: 0 auto;
+padding: 25px;
+justify-content:center;
+align-items: center;
+}
+
+.Card {
+display: block;
+padding: 25px;
+justify-content: space-evenly;
+
+}

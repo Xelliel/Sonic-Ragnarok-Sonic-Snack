@@ -17,10 +17,10 @@ function Create() {
 
   return (
     <div>
-      <h2>Create New Item</h2>
+      <h2>Create New Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title:</label>
+          <label htmlFor="title">New Account:</label>
           <input
             type="text"
             id="title"
@@ -29,7 +29,7 @@ function Create() {
           />
         </div>
         <div>
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description">What're ya munchin'?:</label>
           <textarea
             id="description"
             value={description}

@@ -41,6 +41,9 @@
   background-color: rgb(20, 20, 130);
   overflow: hidden;
   color: white;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .navbar a {
@@ -59,4 +62,11 @@
 
 .navbar ul {
   list-style-type: none;
+}
+.image {
+ display:block;
+ margin-left:auto;
+ margin-right:auto;
+width: 50%;
+ 
 }

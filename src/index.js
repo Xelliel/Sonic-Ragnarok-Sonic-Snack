@@ -60,11 +60,26 @@ const food =[
 
   function addItemToCart() {
     const addSelectFood = document.getElementById("add-items");
-    foodItem.forEach(food =>{
-      //const foodItemElement = createFoodItemElement(food);
-      addSelectFood.appendChild(foodItem(food));
+    food.forEach(item => {
+      addSelectFood.appendChild(createFoodItem(item));
     });
   }
+  
+  function createFoodItem(foodItem) {
+    // Create and configure the DOM element for the food item
+    // and return it
+    const foodElement = document.createElement("div");
+    foodElement.textContent = foodItem;
+    return foodElement;
+  }
+
+ // function addItemToCart() {
+   // const addSelectFood = document.getElementById("add-items");
+    //food.forEach(foodItem => {
+     // addSelectFood.appendChild(foodItem(foodItem));
+    //});
+  //}
+  
 
   document.addEventListener("DOMContentLoaded", addItemToCart);
 
@@ -126,3 +141,4 @@ updateTotals("#add-items-cost",`$${totalPrice}`);
 updateTotals("#shipping-fee",`$${shippingFee}`);
 updateTotals("#total-amount-to-pay",`$${checkoutPrice}`);
 updateTotals("#checkout-btn",`Checkout $${checkoutPrice}`);
+
