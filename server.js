@@ -14,13 +14,18 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+require('dotenv').config();
 const cors = require('cors')
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/Sonic_Snacks", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+const PORT = process.env.PORT;
+
 const Item = require("./models/Item"); // Create the Item model
+
 
 app.get("/api/items", async (req, res) => {
   try {
@@ -51,4 +56,9 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(3002);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+
+module.exports = app;
