@@ -6,7 +6,7 @@ import Home from './Home';
 import Create from './Create';
 import Cards from './Cards';
 import ShoppingCart from './ShoppingCart';
-import CartPage from './ShoppingCart';
+
 
 function App() {
   return (
@@ -25,8 +25,8 @@ function App() {
               <Cards/>
             </Route>
             <div className="shoppingCart"></div>
-            <Route path ="/CartPage">
-              <CartPage/>
+            <Route path ="/ShoppingCart">
+              <ShoppingCart/>
             </Route>
           </Switch>
         </div>
