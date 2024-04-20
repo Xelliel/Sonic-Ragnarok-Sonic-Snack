@@ -40,13 +40,14 @@
   }
 }
 .navbar {
+  margin-left:auto;
+  margin-right:auto;
   width: 2000px;
   background-color: rgb(20, 20, 130);
   overflow: hidden;
   color: white;
   display:block;
-  margin-left:auto;
-  margin-right:auto;
+
 }
 
 .navbar a {
@@ -68,8 +69,8 @@
 }
 .image {
  display:block;
- margin-left:auto;
  margin-right:auto;
-width: 50%;
+ margin-left: 120px;
+ width: 60%;
  
 }

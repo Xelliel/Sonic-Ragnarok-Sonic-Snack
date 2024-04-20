@@ -10,7 +10,7 @@ const Navbar = () => {
             <a href="/Cards">Snacks</a>
             <div className="image">
                 <img src="https://pbs.twimg.com/media/CYdWOiJWYAAhJyL.png"
-                alt="sonic" width="500px"></img>
+                alt="sonic" width="70px"></img>
             </div>
         </nav>
 

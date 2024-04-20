@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 function ShoppingCart() {
   const [cartItems, setCartItems] = useState([]);
 
+
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
@@ -11,6 +12,8 @@ function ShoppingCart() {
   return (
     <div>
       <h1>Shopping Cart</h1>
+      <img src="https://i.pinimg.com/736x/3e/d0/c9/3ed0c915aee5b6d59fab71273d51d4a1.jpg"
+       alt="sonic/shopping"></img>
       <div>
         <h2>Available Items</h2>
         <ul>
