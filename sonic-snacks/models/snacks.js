@@ -1,4 +1,6 @@
-module.exports = [{
+const mongoose = require("mongoose");
+
+const itemSchema = new mongoose.Schema ({
     name:'Cheetos',
     price:'$5.99',
     description:'Yummy Crunchy Snack',
@@ -11,3 +13,5 @@ module.exports = [{
     price:'$6.99',
     description:'Steaming hot and crunchy'
 }]
+
+module.exports = mongoose.model("Item", itemSchema);

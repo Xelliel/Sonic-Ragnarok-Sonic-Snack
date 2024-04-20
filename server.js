@@ -15,7 +15,22 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const cors = require('cors')
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/Sonic_Snacks", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const Item = require("./models/Item"); // Create the Item model
 
+app.get("/api/items", async (req, res) => {
+  try {
+    const items = await Item.find();
+    res.json(items);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Server Error");
+  }
+});
 
 app.use(cors())
 app.use(express,static(''));
